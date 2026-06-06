@@ -94,32 +94,39 @@ body {
 /* Avatar */
 .avatar-container {
   position: relative;
-  width: 150px;
-  height: 150px;
+  width: 154px;
+  height: 154px;
   margin-bottom: 1.5rem;
   transform: translateZ(20px);
+  border-radius: 22px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .avatar {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  border-radius: 20px;
   object-fit: cover;
-  border: 2px solid rgba(255, 255, 255, 0.1);
+  object-position: 45% top;
+  border: 1px solid var(--border-color);
+  background-color: var(--bento-bg);
   position: relative;
   z-index: 2;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 
 .avatar-ring {
   position: absolute;
-  top: -4px;
-  left: -4px;
-  right: -4px;
-  bottom: -4px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--ameria-blue), transparent 60%);
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, transparent 0%, var(--ameria-blue) 25%, transparent 50%);
   z-index: 1;
-  animation: rotate 6s linear infinite;
+  animation: rotate 4s linear infinite;
 }
 
 @keyframes rotate {
@@ -295,4 +302,13 @@ body {
   .bento-grid {
     gap: 10px;
   }
+}
+
+/* Custom Logo Replacement */
+.ameria-logo {
+  width: 85%;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  pointer-events: none; /* Let the parent link handle clicks */
 }
